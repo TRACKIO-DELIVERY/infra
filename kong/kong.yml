@@ -1,0 +1,45 @@
+_format_version: "3.0"
+_transform: true
+services: 
+
+- name: keycloak
+  url: http://keycloak:8080
+  routes:
+  - name: keycloak
+    paths:
+    - /auth
+    methods:
+    - GET
+    - POST
+    - PUT
+    - DELETE
+    - OPTIONS
+    - HEAD
+
+- name: api
+  url: http://api:8002
+  routes:
+  - name: api
+    paths:
+    - /
+    - /docs
+    - /api
+    methods:
+    - GET
+    - POST
+    - PUT
+    - DELETE
+    - OPTIONS
+    - HEAD
+  
+plugins:
+  - name: oidc
+    config:
+      realm: trackio
+      client_id: kong-oidc
+      client_secret: pGc75LZp17VeOdSploI63QZ926E9uQj6
+      discovery: http://keycloak:8080/auth/realms/trackio/.well-known/openid-configuration
+      redirect_uri: http://localhost:8002/api/docs/
+      scope: openid profile email
+      introspection_endpoint_auth_method: client_secret_basic
+      use_jwks: "false"
