@@ -32,7 +32,7 @@ certificates:
       HglZ5WlkKwSlpVJe2ixM4pHVmjCf4ONjG3D10rmPUoOt606J4MWp7P9P
       -----END PRIVATE KEY-----
     snis:
-      - trackio.amisahdev.com.br
+      - name: trackio.amisahdev.com.br
 
 
 
@@ -46,7 +46,7 @@ services:
     - /about/
     - /accounts/*
     - /users/*
-    - /admin/
+    - /admin/*
     methods:
     - GET
     - POST
