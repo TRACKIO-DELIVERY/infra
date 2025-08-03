@@ -65,12 +65,10 @@ services:
     - OPTIONS
     - HEAD
   
-# plugins:
-#   - name: oidc
-#     config:
-#       realm: trackio
-#       client_id: kong-oidc
-#       client_secret: pGc75LZp17VeOdSploI63QZ926E9uQj6
-#       discovery: http://keycloak:8080/auth/realms/trackio/.well-known/openid-configuration
-#       scope: openid profile email
-#       introspection_endpoint_auth_method: client_secret_basic  
+plugins:
+  - name: request-transformer
+    config:
+      replace:
+        headers:
+          - "Host:trackio.amisahdev.com.br"
+          - "X-Forwarded-Proto:https"
