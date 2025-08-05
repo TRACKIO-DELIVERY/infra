@@ -73,9 +73,8 @@ services:
   routes:
   - name: tracking
     paths:
-    - /api/track/docs
-    - /api/track/metrics
-    - ~/api/track/*
+    - /track/docs/
+    - ~/track/*
     methods:
     - GET
     - POST
@@ -126,10 +125,16 @@ services:
     strip_path: false
     path_handling: v1
 
-# plugins:
-#   - name: request-transformer
-#     config:
-#       replace:
-#         headers:
-#           - "Host:trackio-oc.amisahdev.com.br"
-#           - "X-Forwarded-Proto:https"
+plugins:
+  - name: request-transformer
+    config:
+      replace:
+        headers:
+          - "Host:trackio.amisahdev.com.br"
+          - "X-Forwarded-Proto:https"
+
+  - name: rate-limiting
+    config:
+      minute: 100
+      policy: local
+      limit_by: ip
