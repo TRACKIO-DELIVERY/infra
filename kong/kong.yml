@@ -83,7 +83,6 @@ services:
     - DELETE
     - OPTIONS
     - HEAD
-    - name: prometheus
     strip_path: false
     path_handling: v1
 
