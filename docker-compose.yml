@@ -74,7 +74,3 @@ volumes:
 networks:
   api_gateway:
     driver: bridge
-  
-  keycloak_db_network:
-    driver: bridge
-    external: false

@@ -67,7 +67,27 @@ certificates:
       - name: trackio-oc.amisahdev.com.br
 
 
-services: 
+services:
+- name: tracking
+  url: http://tracking_service:3000
+  routes:
+  - name: tracking
+    paths:
+    - /api/track/docs
+    - /api/track/metrics
+    - ~/api/track/*
+    methods:
+    - GET
+    - POST
+    - PUT
+    - DELETE
+    - OPTIONS
+    - HEAD
+    - name: prometheus
+    strip_path: false
+    path_handling: v1
+
+
 - name: django
   url: http://django:5000
   routes:
@@ -75,9 +95,10 @@ services:
     paths:
     - /
     - /about/
-    - /accounts/*
-    - /users/*
-    - /admin/*
+    - ~/accounts/*
+    - ~/users/*
+    - ~/admin/*
+    - ~/api/*
     methods:
     - GET
     - POST
@@ -85,35 +106,31 @@ services:
     - DELETE
     - OPTIONS
     - HEAD
-  - name: api
-    paths:
-    - /api/*
-    methods:
-    - GET
-    - POST
-    - PUT
-    - DELETE
-    - OPTIONS
-    - HEAD
-  
-- name: tracking
-  url: http://tracking:3000
-  routes:
-  - name: tracking
-    paths:
-    - /api/track/*
-    methods:
-    - GET
-    - POST
-    - PUT
-    - DELETE
-    - OPTIONS
-    - HEAD
+    strip_path: false
+    path_handling: v1
 
-plugins:
-  - name: request-transformer
-    config:
-      replace:
-        headers:
-          - "Host:trackio-oc.amisahdev.com.br"
-          - "X-Forwarded-Proto:https"
+- name: grafana
+  url: http://grafana:3000
+  routes:
+  - name: grafana
+    paths:
+    - /grafana
+    - /grafana/
+    - ~/grafana/*
+    methods:
+    - GET
+    - POST
+    - PUT
+    - DELETE
+    - OPTIONS
+    - HEAD
+    strip_path: false
+    path_handling: v1
+
+# plugins:
+#   - name: request-transformer
+#     config:
+#       replace:
+#         headers:
+#           - "Host:trackio-oc.amisahdev.com.br"
+#           - "X-Forwarded-Proto:https"

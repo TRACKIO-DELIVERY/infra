@@ -1,0 +1,34 @@
+  server:
+    log_level: info
+  
+  metrics:
+    wal_directory: /tmp/grafana-agent-wal
+    global:
+      scrape_interval: 15s
+    configs:
+      - name: metrics-scrape
+        scrape_configs:
+          - job_name: 'order-service-django'
+            static_configs:
+              - targets: ['order_service_django:8000']
+          - job_name: 'tracking-service'
+            static_configs:
+              - targets: ['tracking_service:3000']
+
+
+  logs:
+    configs:
+      - name: container-logs
+        clients:
+          - url: http://loki:3100/loki/api/v1/push
+        positions:
+          filename: /tmp/positions.yaml
+        scrape_configs:
+          - job_name: 'docker'
+            static_configs:
+              - targets: [localhost]
+                labels:
+                  job: 'docker-logs'
+                  __path__: /var/lib/docker/containers/*/*.log
+            pipeline_stages:
+              - docker: {}
