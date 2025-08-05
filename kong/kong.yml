@@ -125,6 +125,32 @@ services:
     strip_path: false
     path_handling: v1
 
+- name: loki
+  url: http://loki:3100
+  routes:
+    - name: loki
+      paths:
+        - /loki
+        - ~/loki/*
+      methods:
+        - GET
+        - POST
+      strip_path: false
+      path_handling: v1
+
+- name: prometheus
+  url: http://prometheus:9090
+  routes:
+    - name: prometheus
+      paths:
+        - /prometheus
+        - ~/prometheus/*
+      methods:
+        - GET
+        - POST
+      strip_path: false
+      path_handling: v1
+
 plugins:
   - name: request-transformer
     config:
@@ -134,6 +160,7 @@ plugins:
           - "X-Forwarded-Proto:https"
 
   - name: rate-limiting
+    service: django
     config:
       minute: 100
       policy: local
