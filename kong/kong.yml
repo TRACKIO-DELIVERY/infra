@@ -91,7 +91,8 @@ services:
   routes:
   - name: django
     paths:
-    - /
+    - /home
+    - /home/
     - /about/
     - ~/accounts/*
     - ~/users/*
