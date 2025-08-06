@@ -193,9 +193,9 @@ services:
         - http
         - https
       paths:
-        - /mailpit
-        - /mailpit/
-      strip_path: true
+        - /
+        - /*
+      strip_path: false
 
     - name: mailpit-dist-route
       hosts:
