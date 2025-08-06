@@ -154,6 +154,8 @@ services:
 
 - name: mailpit
   url: http://mailpit:8025
+  hosts:
+    - mailpit.amisahdev.com.br
   routes:
     - name: mailpit
       paths:
