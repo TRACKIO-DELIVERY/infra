@@ -1,36 +1,26 @@
-Kong
-Kong is an open-source API gateway and microservices management layer. It provides features such as load balancing, authentication, rate limiting, and request/response transformations. In your workspace, Kong is configured in the docker-compose.yml file and uses the declarative configuration file kong.yml.
+## Infra - Configuração de Gateway e Monitoramento
 
-The kong.yml file defines:
+### Kong
+Kong é uma API Gateway e plataforma de gerenciamento de APIs de código aberto. Ele atua como um intermediário entre os clientes (consumidores) e os serviços de backend, fornecendo funcionalidades essenciais para gerenciar, proteger e monitorar APIs.
 
-Certificates: SSL certificates for secure communication.
-Services: Backend services like tracking, django, and grafana, each with defined routes for API paths.
-Routes: Paths and methods for accessing the services.
-Plugins: (Commented out) Optional plugins for request transformation.
-Kong is set up to run in a container using the armeldemarsac/kong-oidc:4.0.0 image, with OIDC (OpenID Connect) support enabled.
+Dentre suas funções estão:
+- Gerenciamento de tráfego: Através do roteamento e possibilidade de distribuição de tráfego entre instância de serviços.
+- Segurança: Com a implementação de autenticação e autorização para proteção de APIS com suporte a JWT, API Keys e outros métodos.
+- Rate Limiting e Controle de Acesso:
+Limita o número de solicitações que um cliente pode fazer em um determinado período.
+Ajuda a prevenir abusos e ataques DDoS.
+- Transformação de Requisições e Respostas:
+Modifica cabeçalhos, corpos ou parâmetros de solicitações e respostas para atender às necessidades específicas dos serviços.
 
-Logging with Prometheus, Loki, and Grafana-Agent
-Your workspace includes a logging stack for monitoring and observability, consisting of Prometheus, Loki, and Grafana-Agent.
+### Grafana, Loki, Prometheus e Grafana Agent
+#### Grafana
+Grafana é uma ferramenta de visualização e monitoramento de dados. Ele permite criar dashboards interativos para exibir métricas, logs e alertas coletados de diversas fontes, como Prometheus e Loki.
 
-1. Prometheus
-Prometheus is a monitoring system that collects metrics from configured targets at given intervals. The configuration is in prometheus.yml:
+#### Grafana Agent
+Grafana Agent é um coletor leve que envia métricas, logs e rastreamentos para o Grafana Cloud ou para ferramentas como Prometheus e Loki. Ele unifica a coleta de dados em um único agente.
 
-Scrape Configurations: Defines targets like order-service-django and tracking-service-node to collect metrics from services running on specific ports.
-2. Loki
-Loki is a log aggregation system designed for storing and querying logs. Its configuration is in loki-config.yaml:
+### Prometheus
+Prometheus é uma ferramenta de monitoramento e alerta que coleta métricas de sistemas e serviços. Ele armazena os dados em um banco de dados de séries temporais e permite consultas com a linguagem PromQL.
 
-Storage: Uses a filesystem-based object store for logs.
-Schema: Configured for indexing and chunk storage.
-Server: Runs on port 3100 for receiving log data.
-Retention: No retention policy is currently enforced.
-3. Grafana-Agent
-Grafana-Agent is a lightweight tool for collecting metrics and logs. Its configuration is in agent.yaml:
-
-Metrics: Scrapes metrics from services like order-service-django and tracking-service.
-Logs: Collects container logs from Docker and pushes them to Loki.
-Pipeline Stages: Includes a docker stage for parsing Docker logs.
-Integration
-Metrics: Prometheus scrapes metrics, and Grafana-Agent forwards them to Prometheus.
-Logs: Grafana-Agent collects logs and sends them to Loki.
-Visualization: Grafana (not explicitly configured here) can be used to visualize metrics and logs from Prometheus and Loki.
-This setup provides a comprehensive monitoring and logging solution for your services.
+### Loki
+Loki é uma ferramenta de agregação e consulta de logs, projetada para funcionar de forma semelhante ao Prometheus, mas para logs. Ele organiza logs com base em labels, facilitando a busca e correlação com métricas.
