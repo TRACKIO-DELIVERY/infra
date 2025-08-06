@@ -186,22 +186,24 @@ services:
 - name: mailpit
   url: http://mailpit:8025
   routes:
-  - name: mailpit-prefix-route
-  - hosts:
-    - mailpit.amisahdev.com.br
-    service: mailpit
-    paths:
-      - /mailpit
-      - /mailpit/
-    strip_path: true
+    - name: mailpit-prefix-route
+      hosts:
+      - mailpit.amisahdev.com.br
+      protocols:
+        - http
+        - https
+      paths:
+        - /mailpit
+        - /mailpit/
+      strip_path: true
 
-  - name: mailpit-dist-route
-  - hosts:
-    - mailpit.amisahdev.com.br
-    paths:
-      - /dist
-      - /dist/
-    strip_path: false
+    - name: mailpit-dist-route
+      hosts:
+        - mailpit.amisahdev.com.br
+      paths:
+        - /dist
+        - /dist/
+      strip_path: false
 
 plugins:
   - name: request-transformer
