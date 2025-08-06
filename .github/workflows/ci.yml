@@ -24,6 +24,10 @@ jobs:
           sudo chmod +x /usr/local/bin/docker-compose
           docker-compose --version
     
+      - name: Set up Docker network
+        run: |
+          docker network create rabbitmq_net || true
+
       - name: Run Compose
         run: |
           docker-compose -f docker-compose.yml up -d
