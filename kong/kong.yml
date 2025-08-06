@@ -96,7 +96,7 @@ certificates:
       Zo9xsPoLAw6w8fjqCaHB1qQCmx042Xsjdt+KPLF1TaCRNKtiBty8mpXX
       -----END PRIVATE KEY-----
     snis:
-        - name: mailpit.amisahdev.com.br
+      - name: mailpit.amisahdev.com.br
 
 services:
 - name: tracking
@@ -186,9 +186,9 @@ services:
 - name: mailpit
   url: http://mailpit:8025
   routes:
+  - name: mailpit-prefix-route
   - hosts:
     - mailpit.amisahdev.com.br
-  - name: mailpit-prefix-route
     service: mailpit
     paths:
       - /mailpit
@@ -196,7 +196,8 @@ services:
     strip_path: true
 
   - name: mailpit-dist-route
-    service: mailpit
+  - hosts:
+    - mailpit.amisahdev.com.br
     paths:
       - /dist
       - /dist/
