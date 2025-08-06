@@ -149,7 +149,20 @@ services:
       methods:
         - GET
         - POST
-      strip_path: false
+      strip_path: true
+      path_handling: v1
+
+- name: mailpit
+  url: http://mailpit:8025
+  routes:
+    - name: mailpit
+      paths:
+        - /mailpit/
+        - ~/mailpit/*
+      methods:
+        - GET
+        - POST
+      strip_path: true
       path_handling: v1
 
 plugins:

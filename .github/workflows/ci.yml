@@ -18,13 +18,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Build and cache kong
-        uses: docker/bake-action@v6
-        with:
-          push: false
-          load: true
-          files: docker-compose.yml
+      - name: Install Docker Compose
+        run: |
+          sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+          sudo chmod +x /usr/local/bin/docker-compose
+          docker-compose --version
     
+      - name: Run Compose
+        run: |
+          docker-compose -f docker-compose.yml up -d
+          sleep 30 # Wait for services to start
+          docker-compose -f docker-compose.yml down
+ 
   sync_notify_trackio:
     if : github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
