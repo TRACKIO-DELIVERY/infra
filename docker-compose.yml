@@ -41,7 +41,7 @@ services:
     ports:
       - "3001:3000"
     volumes:
-      - ./infra/logging/grafana/grafana.ini:/etc/grafana/grafana.ini # Mount the updated grafana.ini
+      - ./logging/grafana/grafana.ini:/etc/grafana/grafana.ini # Mount the updated grafana.ini
       - grafana_data:/var/lib/grafana
     networks:
       - api_gateway
@@ -67,7 +67,7 @@ services:
     volumes:
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./infra/logging/grafana/agent.yaml:/etc/agent/agent.yaml
+      - ./logging/grafana/agent.yaml:/etc/agent/agent.yaml
     command:
       - "--config.file=/etc/agent/agent.yaml"
       - "--enable-features=integrations-next"
