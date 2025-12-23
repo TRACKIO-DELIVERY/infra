@@ -12,6 +12,18 @@ Ajuda a prevenir abusos e ataques DDoS.
 - Transformação de Requisições e Respostas:
 Modifica cabeçalhos, corpos ou parâmetros de solicitações e respostas para atender às necessidades específicas dos serviços.
 
+### Keycloak
+https://developer.konghq.com/plugins/openid-connect/examples/introspection-auth/
+Keycloak é um Identity Provider - Provedor de Identificação utilizado para gerenciamento centralizado de  usuários. Oferecendo suporte a configuração de múltiplos provedores de login social (Google, Facebook, Github).
+
+![alt text](image.png)
+* retirado do site do api gateway Kong
+
+
+JWT 
+https://developer.konghq.com/plugins/jwt/reference/
+http://localhost:8088/auth/realms/trackio/.well-known/openid-configuration 
+
 ### Grafana, Loki, Prometheus e Grafana Agent
 #### Grafana
 Grafana é uma ferramenta de visualização e monitoramento de dados. Ele permite criar dashboards interativos para exibir métricas, logs e alertas coletados de diversas fontes, como Prometheus e Loki.
