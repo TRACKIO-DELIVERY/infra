@@ -18,12 +18,6 @@ services:
     strip_path: false
     path_handling: v1
   
-  plugins:
-    - name: jwt
-      config:
-        claims_to_verify: 
-          - exp
-        key_claim_name: iss
 
 - name: grafana
   url: http://grafana:3000
@@ -112,18 +106,51 @@ consumers:
 
 
 plugins:
+  - name: jwt
+    service: spring
+    config:
+      claims_to_verify: 
+        - exp
+      key_claim_name: iss
+
   - name: request-transformer
     config:
+      add:
+        headers:
+          - "X-User-Id: {{jwt.claims.sub}}"
+          - "X-Username: {{jwt.claims.preferred_username}}"
+          - "X-Email: {{jwt.claims.email}}"
+          - "X-User-Role: {{jwt.claims.realm_access.roles[0]}}"
       replace:
         uri: "/api/$(uri_captures['paths'])"
         # headers:
         #   - "Host:trackio.amisahdev.com.br"
         #   - "X-Forwarded-Proto:https"
   
+  - name: cors
+    config:
+      origins:
+        - http://localhost:4200
+      methods:
+        - GET
+        - POST
+        - PUT
+        - PATCH
+        - DELETE
+        - OPTIONS
+      headers:
+        - Authorization
+        - Content-Type
+        - Accept
+      exposed_headers:
+        - X-User-Id
+        - X-Username
+      credentials: true
+      max_age: 3600
 
 
   # - name: rate-limiting
-  #   service: spring
+  #   service: django
   #   config:
   #     minute: 100
   #     policy: local
