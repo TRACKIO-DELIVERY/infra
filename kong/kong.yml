@@ -111,16 +111,13 @@ plugins:
     config:
       claims_to_verify: 
         - exp
-      key_claim_name: iss
+
+  - name: jwt-headers-transformer
+    service: spring
 
   - name: request-transformer
+    service: spring
     config:
-      add:
-        headers:
-          - "X-User-Id: {{jwt.claims.sub}}"
-          - "X-Username: {{jwt.claims.preferred_username}}"
-          - "X-Email: {{jwt.claims.email}}"
-          - "X-User-Role: {{jwt.claims.realm_access.roles[0]}}"
       replace:
         uri: "/api/$(uri_captures['paths'])"
         # headers:
