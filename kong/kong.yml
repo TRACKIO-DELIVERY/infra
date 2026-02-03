@@ -1,83 +1,13 @@
 _format_version: "3.0"
 _transform: true
 
-certificates:
-  - cert: |
-      -----BEGIN CERTIFICATE-----
-      MIIDnDCCAyOgAwIBAgISBu2ZVxUNayZDspneFFhVN4T/MAoGCCqGSM49BAMDMDIx
-      CzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQDEwJF
-      NjAeFw0yNTA4MDMxMzUwMTFaFw0yNTExMDExMzUwMTBaMCMxITAfBgNVBAMTGHRy
-      YWNraW8uYW1pc2FoZGV2LmNvbS5icjBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IA
-      BFCmzbBLcVOZiOCys2qyjclZOoeOz77m/DR1ggcov36dqYV09I5M0S8wP1iRk9yj
-      BwCOs1gR/5HrP3ceNgTWm7ijggImMIICIjAOBgNVHQ8BAf8EBAMCB4AwHQYDVR0l
-      BBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0OBBYE
-      FL0SPCMAg2Z6E/o+JSUL4L2bD37SMB8GA1UdIwQYMBaAFJMnRpgDqVFojpjWxEJI
-      2yO/WJTSMDIGCCsGAQUFBwEBBCYwJDAiBggrBgEFBQcwAoYWaHR0cDovL2U2Lmku
-      bGVuY3Iub3JnLzAjBgNVHREEHDAaghh0cmFja2lvLmFtaXNhaGRldi5jb20uYnIw
-      EwYDVR0gBAwwCjAIBgZngQwBAgEwLgYDVR0fBCcwJTAjoCGgH4YdaHR0cDovL2U2
-      LmMubGVuY3Iub3JnLzEyOC5jcmwwggEDBgorBgEEAdZ5AgQCBIH0BIHxAO8AdgDt
-      PEvW6AbCpKIAV9vLJOI4Ad9RL+3EhsVwDyDdtz4/4AAAAZhwaAQrAAAEAwBHMEUC
-      ID/glju46XuAKYlDRm8q9nxo1+TiVZjGGrAvCVRcseMrAiEA80NrjA605K6HbJGE
-      aJXSzXDe/ffvnbk2MaCr8L8a/LwAdQAN4fIwK9MNwUBiEgnqVS78R3R8sdfpMO8O
-      Qh60fk6qNAAAAZhwaAQhAAAEAwBGMEQCIDMxlV0V+l4Sr4kpRdKs0WGTPfItTZ9U
-      cRQMfG0JvPdQAiA9jhqwYAxLuKDQKd7HFTlSBPtqSDKQrzMRLWy4F2HQ5TAKBggq
-      hkjOPQQDAwNnADBkAjAwnl/I52RjIDeEKCg85ktxZylXKLzW0HF0GMU6httirKI6
-      Hilt1OXbloKYeWjFShsCMCHjdcutQOg3sVAs0ED0kZ77UYDjBqD07l8Jdy9oSndP
-      y/QXS46XktFW14LFe3uSCA==
-      -----END CERTIFICATE-----
-    key: |
-      -----BEGIN PRIVATE KEY-----
-      MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgpJt+Ff66roe0iJ93
-      1Uifb0VDERT8lvi7TEepAVGXXA+hRANCAARQps2wS3FTmYjgsrNqso3JWTqHjs++
-      5vw0dYIHKL9+namFdPSOTNEvMD9YkZPcowcAjrNYEf+R6z93HjYE1pu4
-      -----END PRIVATE KEY-----
-    snis:
-      - name: trackio.amisahdev.com.br
-
-  - cert: |
-      -----BEGIN CERTIFICATE-----
-      MIIDojCCAymgAwIBAgISBaEna8M2VksB/iy0mhPwMMO4MAoGCCqGSM49BAMDMDIx
-      CzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQDEwJF
-      NjAeFw0yNTA4MDMxNDM5MTlaFw0yNTExMDExNDM5MThaMCYxJDAiBgNVBAMTG3Ry
-      YWNraW8tb2MuYW1pc2FoZGV2LmNvbS5icjBZMBMGByqGSM49AgEGCCqGSM49AwEH
-      A0IABLKmzQraP/uYoOdIfXGsSGLfHD4ukb/vAhNWmeRAfKNFyeSYA5m4LyVdXDUk
-      KXDnBg7ogKYh0Qq255QA94Q4V/+jggIpMIICJTAOBgNVHQ8BAf8EBAMCB4AwHQYD
-      VR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0O
-      BBYEFCvQbsIM6MsiGNk/zSwAgI9yyrURMB8GA1UdIwQYMBaAFJMnRpgDqVFojpjW
-      xEJI2yO/WJTSMDIGCCsGAQUFBwEBBCYwJDAiBggrBgEFBQcwAoYWaHR0cDovL2U2
-      LmkubGVuY3Iub3JnLzAmBgNVHREEHzAdght0cmFja2lvLW9jLmFtaXNhaGRldi5j
-      b20uYnIwEwYDVR0gBAwwCjAIBgZngQwBAgEwLQYDVR0fBCYwJDAioCCgHoYcaHR0
-      cDovL2U2LmMubGVuY3Iub3JnLzU3LmNybDCCAQQGCisGAQQB1nkCBAIEgfUEgfIA
-      8AB1ABoE/0nQVB1Ar/agw7/x2MRnL07s7iNAaJhrF0Au3Il9AAABmHCVAY4AAAQD
-      AEYwRAIgHKev28vV+/g8U94NWVbvH04n2btBs33ITZ8YwkBBWYUCIBLA98iUlDPN
-      gIIea7BonC1pTT9K4Usv5d9oMhzYDuOhAHcAEvFONL1TckyEBhnDjz96E/jntWKH
-      iJxtMAWE6+WGJjoAAAGYcJUBWgAABAMASDBGAiEA+wskfFkiwep7PIxWL2POsf+S
-      0erDuXU6bw4UzU6cLMMCIQCAWa/vT3qG2Cs4ZLb5TaTqpuEAyOdWqV4tcpGW4Xrd
-      2DAKBggqhkjOPQQDAwNnADBkAjBrXHRqTDb1htaDcfez8a1ig5KZ/wv1F0p3+jf+
-      RGrms4x9EdVgUkLd+jbYKWiwT7gCMERubJanfFlWf30+oabexpLHSMoQg5Soq/eq
-      zyCHlEBIWYPP1UUIciid43n2aQO/cg==
-      -----END CERTIFICATE-----
-    key: |
-      -----BEGIN PRIVATE KEY-----
-      MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgbM1SYCgscqd8tk3t
-      KeugdlMgQTpxg2CJaiHWs+AgF4GhRANCAASyps0K2j/7mKDnSH1xrEhi3xw+LpG/
-      7wITVpnkQHyjRcnkmAOZuC8lXVw1JClw5wYO6ICmIdEKtueUAPeEOFf/
-      -----END PRIVATE KEY-----
-    snis:
-      - name: trackio-oc.amisahdev.com.br
-
-
-services: 
-- name: django
-  url: http://django:5000
+services:
+- name: spring
+  url: http://order-spring:5000
   routes:
-  - name: django
+  - name: spring
     paths:
-    - /
-    - /about/
-    - /accounts/*
-    - /users/*
-    - /admin/*
+    - ~/api/order-service/(?<paths>.*)
     methods:
     - GET
     - POST
@@ -85,23 +15,18 @@ services:
     - DELETE
     - OPTIONS
     - HEAD
-  - name: api
-    paths:
-    - /api/*
-    methods:
-    - GET
-    - POST
-    - PUT
-    - DELETE
-    - OPTIONS
-    - HEAD
+    strip_path: false
+    path_handling: v1
   
-- name: tracking
-  url: http://tracking:3000
+
+- name: grafana
+  url: http://grafana:3000
   routes:
-  - name: tracking
+  - name: grafana
     paths:
-    - /api/track/*
+    - /grafana
+    - /grafana/
+    - ~/grafana/*
     methods:
     - GET
     - POST
@@ -109,11 +34,122 @@ services:
     - DELETE
     - OPTIONS
     - HEAD
+    strip_path: false
+    path_handling: v1
+
+- name: loki
+  url: http://loki:3100
+  routes:
+    - name: loki
+      paths:
+        - /loki
+        - ~/loki/*
+      methods:
+        - GET
+        - POST
+      strip_path: false
+      path_handling: v1
+
+- name: prometheus
+  url: http://prometheus:9090
+  routes:
+    - name: prometheus
+      paths:
+        - /prometheus
+        - ~/prometheus/*
+      methods:
+        - GET
+        - POST
+      strip_path: true
+      path_handling: v1
+
+- name: mailpit
+  url: http://mailpit:8025
+  routes:
+    - name: mailpit-prefix-route
+      hosts:
+      - mailpit.amisahdev.com.br
+      protocols:
+        - http
+        - https
+      paths:
+        - /
+        - /*
+      strip_path: false
+
+    - name: mailpit-dist-route
+      hosts:
+        - mailpit.amisahdev.com.br
+      paths:
+        - /dist
+        - /dist/
+      strip_path: false
+
+
+consumers:
+  - username: keycloak
+    jwt_secrets:
+      - algorithm: RS256
+        key: http://localhost:8088/auth/realms/trackio
+        rsa_public_key: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvSIxSUFAYEY2mqmGsp4M
+          McEUfEax3PvGWBrdfw5Y1/9swqv0zbo21upvGo/KzVQEvreYCbZ121TNkThxxqtv
+          7kyqLqWz0y4iYTlL9nlSB1nU38TqJjoUXnlcVIemb6bP3AGxKmBxdCXSgpJRz2fc
+          mp8ZHVeZ3h+SuSFJ0v+j/XzC9kpShQjAU4JVwfoCKup2r/X3vvzXKB6KfTK01yhZ
+          Vy0iRRQxbVBr35pofe/O7CCUhaK3Ay2W/3cXYvzLbRlvndDeCTrhsetD3leRILbH
+          ar9RUzaPU3HiBluheqWHSSSt3nKdhwZTdsPT19bLbdPkFX8NlRhl8dk/oXWrxczl
+          xwIDAQAB
+          -----END PUBLIC KEY-----
+
+
+
 
 plugins:
+  - name: jwt
+    service: spring
+    config:
+      claims_to_verify: 
+        - exp
+      jwks_uri: 
+
+  - name: jwt-headers-transformer
+    service: spring
+
   - name: request-transformer
+    service: spring
     config:
       replace:
-        headers:
-          - "Host:trackio-oc.amisahdev.com.br"
-          - "X-Forwarded-Proto:https"
+        uri: "/api/$(uri_captures['paths'])"
+        # headers:
+        #   - "Host:trackio.amisahdev.com.br"
+        #   - "X-Forwarded-Proto:https"
+  
+  - name: cors
+    config:
+      origins:
+        - http://localhost:4200
+      methods:
+        - GET
+        - POST
+        - PUT
+        - PATCH
+        - DELETE
+        - OPTIONS
+      headers:
+        - Authorization
+        - Content-Type
+        - Accept
+      exposed_headers:
+        - X-User-Id
+        - X-Username
+      credentials: true
+      max_age: 3600
+
+
+  # - name: rate-limiting
+  #   service: django
+  #   config:
+  #     minute: 100
+  #     policy: local
+  #     limit_by: ip
