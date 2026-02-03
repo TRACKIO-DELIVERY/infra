@@ -2,10 +2,22 @@ _format_version: "3.0"
 _transform: true
 
 services:
+- name: keycloak
+  url: http://keycloak:8080
+  routes:
+  - name: keycloak
+    hosts:
+      - auth.amisahdev.com.br
+    paths:
+      - /
+    strip_path: false
+    
 - name: spring
   url: http://order-spring:5000
   routes:
   - name: spring
+    hosts:
+      - trackio.amisahdev.com.br
     paths:
     - ~/api/order-service/(?<paths>.*)
     methods:
@@ -90,17 +102,18 @@ consumers:
   - username: keycloak
     jwt_secrets:
       - algorithm: RS256
-        key: http://localhost:8088/auth/realms/trackio
+        key: https://auth.amisahdev.com.br/realms/trackio
         rsa_public_key: |
           -----BEGIN PUBLIC KEY-----
-          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvSIxSUFAYEY2mqmGsp4M
-          McEUfEax3PvGWBrdfw5Y1/9swqv0zbo21upvGo/KzVQEvreYCbZ121TNkThxxqtv
-          7kyqLqWz0y4iYTlL9nlSB1nU38TqJjoUXnlcVIemb6bP3AGxKmBxdCXSgpJRz2fc
-          mp8ZHVeZ3h+SuSFJ0v+j/XzC9kpShQjAU4JVwfoCKup2r/X3vvzXKB6KfTK01yhZ
-          Vy0iRRQxbVBr35pofe/O7CCUhaK3Ay2W/3cXYvzLbRlvndDeCTrhsetD3leRILbH
-          ar9RUzaPU3HiBluheqWHSSSt3nKdhwZTdsPT19bLbdPkFX8NlRhl8dk/oXWrxczl
-          xwIDAQAB
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApLsf0Uw4WJS5fjqUfsx4
+          IbcpZgkwx9wlAWFSDw3btX+ZZBnmwlI89+nd1F77KquPyDPUXoraMsQp4qdGQX+h
+          exNLlAsy7as2L6L2Z/el0oHDMhZoyrZk/xvoKoi5fEwSEvLx6vKTj3F27fvBJ3LO
+          fqj191hsD5Q+kYfg0K4S0XEtfdjMNbN8jKk8ZqQANGuUxnZvrisAuBVWfBLzuXQu
+          GvHST+/CjpsiImSxDILHYXrsPlqh1AW4EpJ13KZZnH60ZFKmpYXUmSCzlsIkjwwB
+          U+QidF6VATR4h5uzTiuRA6KqaKza0S4bY2mdVfNGx5kPfqD2FZv+VVjPA/c9bLvV
+          +QIDAQAB
           -----END PUBLIC KEY-----
+
 
 
 
@@ -111,7 +124,6 @@ plugins:
     config:
       claims_to_verify: 
         - exp
-      jwks_uri: 
 
   - name: jwt-headers-transformer
     service: spring
