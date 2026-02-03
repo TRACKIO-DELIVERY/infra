@@ -19,11 +19,6 @@ Keycloak é um Identity Provider - Provedor de Identificação utilizado para ge
 ![alt text](image.png)
 * retirado do site do api gateway Kong
 
-
-JWT 
-https://developer.konghq.com/plugins/jwt/reference/
-http://localhost:8088/auth/realms/trackio/.well-known/openid-configuration 
-
 ### Grafana, Loki, Prometheus e Grafana Agent
 #### Grafana
 Grafana é uma ferramenta de visualização e monitoramento de dados. Ele permite criar dashboards interativos para exibir métricas, logs e alertas coletados de diversas fontes, como Prometheus e Loki.
