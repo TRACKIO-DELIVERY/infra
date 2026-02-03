@@ -2,10 +2,24 @@ _format_version: "3.0"
 _transform: true
 
 services:
+- name: keycloak
+  url: http://keycloak:8080
+  routes:
+  - name: keycloak
+    hosts:
+      - auth.amisahdev.com.br
+    paths:
+      - /auth
+      - /auth/
+      - /auth/*
+    strip_path: false
+    
 - name: spring
   url: http://order-spring:5000
   routes:
   - name: spring
+    hosts:
+      - trackio.amisahdev.com.br
     paths:
     - ~/api/order-service/(?<paths>.*)
     methods:
