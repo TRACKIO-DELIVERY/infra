@@ -8,9 +8,9 @@
     configs:
       - name: metrics-scrape
         scrape_configs:
-          - job_name: 'order-service-django'
+          - job_name: 'order-service'
             static_configs:
-              - targets: ['order_service_django:8000']
+              - targets: ['order_service_spring:5000']
           - job_name: 'tracking-service'
             static_configs:
               - targets: ['tracking_service:3000']
