@@ -38,7 +38,7 @@ function JwtHeadersTransform:access(conf)
   end
 
   if claims.name then
-    kong.service.request.set_header("X-Name", claims.name)
+    kong.service.request.set_header("X-Full-Name", claims.name)
   end
   
   if claims.email then

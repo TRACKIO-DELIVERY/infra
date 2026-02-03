@@ -93,15 +93,15 @@ consumers:
         key: http://localhost:8088/auth/realms/trackio
         rsa_public_key: |
           -----BEGIN PUBLIC KEY-----
-          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2
-          SAU7zyiIo5LIL8PskmyqXTteWqURZxFNUPT366Y0pHqcqb
-          iKYUlXgQ6ZOfAcj5lS9L5p8pJaLzAK/2wsUZ7RcxeAZKeaks/
-          HSQcu3DlpBCV0ciAcqfSaD6WOObgjVZFXItYUYsKbr7v4eaar
-          DKolYqob65gzbZOJsffaFQlcjdgFLz7V+eF0xdOdVxYMQQSbBu
-          LHbondBp9uWW6dJvuogZ3nPPANGGjrw/Mxb9El6yF2rnZcqGQv
-          JzrVdN83cQZ9TQvfuKO7XkNvkfy+w9mNPuww+qzULw4BeLyIit
-          yUsulCcDGiB+Zo/YcKobgoqC4GapfV+o/vYGb6NlAE7kYywIDAQAB
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvSIxSUFAYEY2mqmGsp4M
+          McEUfEax3PvGWBrdfw5Y1/9swqv0zbo21upvGo/KzVQEvreYCbZ121TNkThxxqtv
+          7kyqLqWz0y4iYTlL9nlSB1nU38TqJjoUXnlcVIemb6bP3AGxKmBxdCXSgpJRz2fc
+          mp8ZHVeZ3h+SuSFJ0v+j/XzC9kpShQjAU4JVwfoCKup2r/X3vvzXKB6KfTK01yhZ
+          Vy0iRRQxbVBr35pofe/O7CCUhaK3Ay2W/3cXYvzLbRlvndDeCTrhsetD3leRILbH
+          ar9RUzaPU3HiBluheqWHSSSt3nKdhwZTdsPT19bLbdPkFX8NlRhl8dk/oXWrxczl
+          xwIDAQAB
           -----END PUBLIC KEY-----
+
 
 
 
@@ -111,6 +111,7 @@ plugins:
     config:
       claims_to_verify: 
         - exp
+      jwks_uri: 
 
   - name: jwt-headers-transformer
     service: spring
