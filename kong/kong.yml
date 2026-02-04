@@ -27,6 +27,7 @@ services:
       - GET
       - POST
       - PUT
+      - PATCH
       - DELETE
       - OPTIONS
       - HEAD
@@ -40,7 +41,7 @@ services:
     paths:
       - /track
     hosts:
-      - tracking.amisahdev.com.br
+      - trackio.amisahdev.com.br
     methods:
       - GET
       - POST
@@ -157,9 +158,11 @@ plugins:
         #   - "X-Forwarded-Proto:https"
   
   - name: cors
+    service: spring
     config:
       origins:
         - http://localhost:4200
+        - https://trackadmin.amisahdev.com.br
       methods:
         - GET
         - POST
@@ -174,6 +177,8 @@ plugins:
       exposed_headers:
         - X-User-Id
         - X-Username
+        - X-Full-name
+        - X-Email
       credentials: true
       max_age: 3600
 
