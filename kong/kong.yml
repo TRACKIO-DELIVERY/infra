@@ -183,9 +183,9 @@ plugins:
       max_age: 3600
 
 
-  # - name: rate-limiting
-  #   service: django
-  #   config:
-  #     minute: 100
-  #     policy: local
-  #     limit_by: ip
+  - name: rate-limiting
+    service: spring
+    config:
+      minute: 100
+      policy: local
+      limit_by: ip
