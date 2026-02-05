@@ -49,7 +49,7 @@ services:
       - DELETE
       - OPTIONS
       - HEAD
-  strip_path: false
+    strip_path: false
 
 - name: grafana
   url: http://grafana:3000
