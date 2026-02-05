@@ -57,8 +57,10 @@ services:
   - name: grafana
     paths:
       - /grafana
-      - /grafana/
-      - ~/grafana/*
+    preserve_host: true
+    protocols:  
+      - http
+      - https
     methods:
       - GET
       - POST
