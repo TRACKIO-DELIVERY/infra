@@ -2,15 +2,12 @@ global:
   scrape_interval: 15s
 
 scrape_configs:
-  - job_name: order-service-django
+  - job_name: order-service-spring
     static_configs:
-      - targets: ['django:8000']
+      - targets: ['spring:5000']
 
   - job_name: tracking-service-node
     static_configs:
-      - targets: ['tracking:3000']
+      - targets: ['tracking:3333']
 
-  - job_name: 'rabbitmq'
-    static_configs:
-      - targets: ['rabbitmq:15692']
 
