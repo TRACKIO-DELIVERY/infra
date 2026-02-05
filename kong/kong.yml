@@ -160,11 +160,11 @@ plugins:
         #   - "X-Forwarded-Proto:https"
   
   - name: cors
-    service: spring
     config:
       origins:
         - http://localhost:4200
         - https://trackadmin.amisahdev.com.br
+        - https://trackio.amisahdev.com.br
       methods:
         - GET
         - POST

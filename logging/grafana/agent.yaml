@@ -13,7 +13,7 @@
               - targets: ['order_service_spring:5000']
           - job_name: 'tracking-service'
             static_configs:
-              - targets: ['tracking_service:3000']
+              - targets: ['tracking_service:3333']
 
 
   logs:

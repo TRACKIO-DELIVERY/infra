@@ -17,7 +17,7 @@ https://developer.konghq.com/plugins/openid-connect/examples/jwt-access-token/
 Keycloak é um Identity Provider - Provedor de Identificação utilizado para gerenciamento centralizado de  usuários. Oferecendo suporte a configuração de múltiplos provedores de login social (Google, Facebook, Github).
 
 ![alt text](image-1.png)
-* retirado do site do api gateway Kong
+retirado do site do api gateway Kong
 
 ### Grafana, Loki, Prometheus e Grafana Agent
 #### Grafana
